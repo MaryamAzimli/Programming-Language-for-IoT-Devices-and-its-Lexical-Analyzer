@@ -1,9 +1,9 @@
 # A Programming Language for IoT Devices and its Lexical Analyzer. 
 Project for CS315, Bilkent University. <br />
 Team Members:<br />
-  *Maryam Azimli<br />
-  *Mennatallah Abouelenin <br />
-  *Ozgur Ikidag<br />
+  &emsp;*Maryam Azimli<br />
+  &emsp;*Mennatallah Abouelenin <br />
+  &emsp;*Ozgur Ikidag<br />
 Grades:<br />
-  *Project 1: Lexical Analyzer<br />
-  *Project 2: Yacc
+  &emsp;*Project 1: Lexical Analyzer<br />
+  &emsp;*Project 2: Yacc
