@@ -1,0 +1,31 @@
+**Test3: This program checks the humidity and air quality. 0 is normal, 1 is not normal**
+** error forgotten return type void**
+checkHumidity()[
+	**Humidity percentages. Normal below 60 and above 30.**
+	var hum = sensor.humidity();
+	var num = 0;
+	if(hum > 60 && hum < 30)[
+		num = 1;
+	]
+**error: forgotten semicolon**
+	turn num
+]
+void checkQuality()[
+	**According to air quality index values, normal is 100 and below**
+	var qual = sensor.airQuality();
+	var num = 0;
+	if(qual > 100)
+	**error forgotten [ for if **
+		num = 1;
+	]
+	turn num;
+]
+
+out("Checking if humidity and air quality are at normal levels. 0-Normal. 1-Not normal.");
+var humValue = checkHumidity();
+var qualValue = checkQuality();
+out("Humidity: ");
+out(humValue);
+out("Air quality: ");
+out(qualVlue);
+out("End of Program");

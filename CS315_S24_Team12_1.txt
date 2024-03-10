@@ -1,0 +1,18 @@
+**This program calculates the area that a square air conditioner can take**
+**Test: 1**
+int calcTheArea(var value)[
+    if(value<0)[
+	    out("Cant be negative number");
+	    turn -1;
+    ]
+    var area = value * value;
+    turn area;
+]
+connection = connectionCreate("https://www.random.org/");
+var value = connection.Read();
+var area = calcTheArea(value);
+out("The area is: ");
+out(area);
+out("Sending the Area to the connection");
+connection.Send(area);
+out("Area Successfully sent");

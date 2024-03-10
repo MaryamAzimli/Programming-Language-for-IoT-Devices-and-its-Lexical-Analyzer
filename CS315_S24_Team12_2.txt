@@ -1,0 +1,32 @@
+**Test: 2**
+int CalcFibo(var n)[
+
+**return 0 and 1**
+if(n=:=0)[
+	turn 0;
+]
+if(n=:=1)[
+	turn 1;
+]
+var three = n - 1;
+var two = n - 2;
+var k = CalcFibo(three);
+**calculate other numbers**
+
+var j = CalcFibo(two);
+
+var addition = k + j;
+turn addition;
+]
+
+out("Getting the number of Fibonacci terms to generate from connection");
+connection = connectionCreate("https://www.random.org/");
+var value = connection.Read();
+
+out("Fibonacci sequence:");
+five(var i = 0; i<value; i=i+1)[
+     var m = CalcFibo(i);
+     out(m);
+]
+
+out("End of Calculating");

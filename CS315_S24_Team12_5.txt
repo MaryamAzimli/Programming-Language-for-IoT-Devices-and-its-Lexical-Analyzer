@@ -1,0 +1,95 @@
+**Program2: This program checks the working ours, temperature, and sound frequency.**
+void checking()[
+	var day = findDay(); 
+	**we should use previous function as well**
+	var hour = timer.getHour();
+	if(day =:= 1 ||day =:= 7)[
+		lights.off();
+	]
+	else[
+		if( hour >= 8 && hour <= 17)[
+			lights.on();
+		]
+		else[
+			lights.off()
+			**error no semcilon**
+		]
+	]
+	var temp = sensor.temperature();
+	if(temp  18)[
+	**error no boolean expression above**
+		heater.on();
+	]
+	else[
+		air_Conditioner.on();
+	]
+	var soundFreq = sensor.soundLevel();
+	connection = connectionCreate("https://www.cs.bilkent.edu.tr~guvenir/courses/CS315/Pr1.htm");
+	if(soundFreq  > 15)[
+		connection.Send(1);
+	]
+	else[
+	    connection.Send(0);
+	]
+]	
+int findDay()
+	**error above forgotten [**
+    var result = 0;
+    var year = timer.getYear();
+    if(year < 1753)[
+	    turn -1;
+    ]
+    var yearDigits = year % 100;
+    result = yearDigits + (yearDigits/4);
+    result = result + timer.getDay();
+    var month = timer.getMonth();
+    var monthKey;
+    if(month =:= 1 || month =:= 10)[
+	    monthKey = 1;
+    ]
+    else_if(month =:= 2 || month =:= 3 ||month =:= 11)[
+	    monthKey = 4;
+    ]
+    else_if(month =:= 4 || month =:= 7)[
+    	monthKey = 0;
+    ]
+    else_if(month =:= 5)[
+    	monthKey = 2;
+    ]
+    else_if(month =:= 6)[
+	    monthKey = 5;
+    ]
+    else_if(month =:= 8)[
+	    monthKey = 3;
+    ]
+    else_if(month =:= 9 ||month =:=12)[
+	    monthKey = 6;
+    ]
+    else[
+    	monthKey = 0;
+    ]
+    result = result + monthKey;
+    if(year < 1900)[
+    	result = result + 2;
+    ]
+    if(year < 1800)[
+    	result = result + 4;
+    ]
+    if(year < 2099 && year > 2000)[
+	    result = result - 1;
+    ]
+    result = result % 7;
+    turn result;
+]
+    
+out("Running checks... After each check is over, enter 1 to repeat.");
+checking();
+connection = connectionCreate("https://www.cs.bilkent.edu.tr/~guvenir/courses/CS315/Pr1.htm");
+var value = connection.Read();
+white(value =:= 1)[
+    checking();
+    value = connection.Read();
+]
+out("Program finished");
+    
+
