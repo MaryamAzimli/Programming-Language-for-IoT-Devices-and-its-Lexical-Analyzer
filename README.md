@@ -7,4 +7,4 @@ Team Members:<br />
   &emsp;*Ozgur Ikidag<br />
 Grades:<br />
   &emsp;*Project 1: Lexical Analyzer --- 94/100<br />
-  &emsp;*Project 2: Yacc
+  &emsp;*Project 2: Yacc --------------- 81/100
